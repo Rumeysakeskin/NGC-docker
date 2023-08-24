@@ -68,13 +68,27 @@ To create your own container, choose a suitable PyTorch container version from [
 
 *For example my machine specifications: `cuda:11.6.2` and `ubuntu:20.04`. I have to use `nvidia container: 22.04`.*
 
-
 ```python
 FROM nvcr.io/nvidia/pytorch:22.04-py3
 WORKDIR /working/directory/ 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 ```
+
+- #### For NVIDIA Jetson device, you can find the Jetpack version and the relative version of L4T that it makes available using [NVIDIA® Jetson™ L4T and JetPack Support](https://www.stereolabs.com/blog/nvidia-jetson-l4t-and-jetpack-support/).
+
+Our specifications:
+- JetPack 4.6.1
+- L4T 32.7.1
+- Find your image name from [Containers NVIDIA L4T ML](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-ml/tags)
+
+```python
+FROM nvcr.io/nvidia/l4t-ml:r32.7.1-py3 
+WORKDIR /working/directory/ 
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+```
+
 4. ### Build Docker
 ```python
 docker build --no-cache -t project_name .
