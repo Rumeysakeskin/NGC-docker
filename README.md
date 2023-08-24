@@ -77,10 +77,9 @@ RUN pip install -r requirements.txt
 
 - #### For NVIDIA Jetson device, you can find the Jetpack version and the relative version of L4T that it makes available using [NVIDIA® Jetson™ L4T and JetPack Support](https://www.stereolabs.com/blog/nvidia-jetson-l4t-and-jetpack-support/).
 
-Our specifications:
-- JetPack 4.6.1
-- L4T 32.7.1
-- Find your image name from [Containers NVIDIA L4T ML](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-ml/tags)
+*For example our specifications: `JetPack 4.6.1`, `L4T 32.7.1`*
+
+- #### You can find your image name from [Containers NVIDIA L4T ML](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-ml/tags)
 
 ```python
 FROM nvcr.io/nvidia/l4t-ml:r32.7.1-py3 
